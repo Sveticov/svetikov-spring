@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome</title>
+    <style>
+        body {
+            background: url(../images/mountain-4.jpg);
+            background-attachment: fixed;
+            background-size: cover;
+            background-repeat: no-repeat;
+
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            background-color: silver;
+            border: 1px solid silver;
+            padding: 0px;
+            border-radius: 5px;
+            opacity: 0.7;
+
+            box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+
+        .body-box {
+            padding-top: 10px;
+            padding-bottom: 5px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .header-box {
+            background-color: dimgray;
+            text-align: center;
+            padding: 30px;
+        }
+
+        input {
+
+            width: 50%;
+            padding: 2px;
+            border-radius: 5px;
+        }
+
+        .btn-1 {
+            background-color: white;
+            color: black;
+            border: 2px solid #4CAF50;
+            padding: 15px;
+            margin-top: 10px;
+            box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+
+        .container-1 {
+            display: flex;
+
+        }
+        .container-2 {
+            display: flex;
+            flex-direction: row;
+
+        }
+
+        .box-1 {
+            flex: 1;
+        }
+
+        .box-11 {
+            flex: 1;
+        }
+
+        .box-2 {
+            flex: 2;
+        }
+
+        .box-22 {
+            flex: 2;
+        }
+
+        .box-3 {
+            flex: 1;
+        }
+
+        .gre-1 {
+            background: darkgray;
+            padding: 5px;
+        }
+
+        .gre-2 {
+            background: darkseagreen;
+            padding: 5px;
+        }
+
+        .app-form {
+            padding: 20px;
+        }
+
+        .img-style {
+            width: 150px;
+            height: 150px;
+            border: 1px solid silver;
+        }
+    </style>
+</head>
+<body>
+<div class="container-1">
+    <div class="box-1">
+        <ul>
+            <div class="gre-1">
+                <li>
+                    <a href="/api/user">User</a>
+                </li>
+            </div>
+            <div class="gre-2">
+                <li>
+                    <a href="/api/admin">Admin</a>
+                </li>
+            </div>
+            <div class="gre-2">
+                <li>
+                    <a href="/show/images/all1">Images</a>
+                </li>
+            </div>
+        </ul>
+    </div>
+    <div class="box-2">
+        <div class="app-form">
+            <form method="post" th:action="@{/welcome}">
+                <div class="header-box">
+                    <h1>Login</h1>
+                </div>
+                <div class="body-box">
+                    <label for="name-1">User:</label>
+                    <input type="text" id="name-1" name="username" placeholder="user name">
+                    <label for="pass">Pass:</label>
+                    <input type="password" id="pass" name="password" placeholder="password">
+                    <input class="btn-1" type="submit" value="Login">
+                </div>
+
+            </form>
+        </div>
+
+    </div>
+    <div class="box-3">
+        <div class="app-form">
+            <form th:action="@{/logout}" method="post">
+
+                <label for="log-2">Logout </label>
+                <input class="btn-1" type="submit" id="log-2" value="Logout">
+            </form>
+        </div>
+    </div>
+</div>
+<div class="container-2">
+    <div class="box-11">
+        <p><a href="/image1"><img src="../images/images.jpg" class="img-style"></a>Snow</p>
+        <p><a href="/image2"><img src="../images/Cover.jpeg" class="img-style"></a>Snow</p>
+        <p><a href="/image3"><img src="../images/download.jpg" class="img-style"></a>Snow</p>
+        <p><a href="/image4"><img src="../images/snow2.jpg" class="img-style"></a>Snow</p>
+        <p><a href="/image5"><img src="../images/39691473-way-wallpapers.jpg" class="img-style"></a>Snow</p>
+
+    </div>
+        <div class="box-22">
+            <h1>2111111111111</h1>
+            <h1>2111111111111</h1>
+            <h1>2111111111111</h1>
+            <h1>2111111111111</h1>
+            <h1>2111111111111</h1>
+
+        </div>
+        <div class="box-3">
+            <h1>3111111111</h1>
+            <h1>3111111111</h1>
+            <h1>3111111111</h1>
+            <h1>3111111111</h1>
+            <h1>3111111111</h1>
+
+        </div>
+    </div>
+
+</body>
+</html>

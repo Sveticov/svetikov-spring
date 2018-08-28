@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ul th:each="model: ${id_img}">
+    <li>
+        <p th:text="${model}"></p>
+        <img th:src="@{'/show/images/all/'+${model}}" width="350" height="250">
+    </li>
+</ul>
+
+
+
+</body>
+</html>

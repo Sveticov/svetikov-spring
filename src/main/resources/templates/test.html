@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
+          integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"
+            integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"
+            integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"
+            integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
+            crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+ </head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <p id="demo"></p>
+        </div>
+        <div class="col">
+            <div >
+                <p id="demo2"></p>
+            </div>
+
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col">
+            <svg height="710" width="1100">
+                <!--<line y2="line" x1="0" y1="0" x2="200"  style="stroke:rgb(255,0,0);stroke-width:2" />-->
+            </svg>
+        </div>
+    </div>
+</div>
+
+
+
+<script>
+
+    var myVar = setInterval(myTimer, 1000);
+
+    function myTimer() {
+        var d = new Date();
+        var t = d.toLocaleTimeString();
+        document.getElementById("demo").innerHTML = t;
+    }
+
+
+
+</script>
+<script>
+    $(document).ready(function ($) {
+
+         var myValue = setInterval(myFuncVal, 100)
+
+        var l1,l2,l3,l4;
+        function myFuncVal() {
+
+            $.ajax({
+                type: "GET",
+                url: "/api/myval",
+                success: function (result) {
+                   // alert(result.mydata)
+                    document.getElementById("demo2").innerHTML = result.mydata+"  "+result.mydata2;
+
+                    //
+                    l1=result.mydata;
+                    l3=result.mydata2;
+
+                    var newLine = document.createElementNS('http://www.w3.org/2000/svg','line');
+                    newLine.setAttribute('id','line2');
+                    newLine.setAttribute('x1',l4);
+                    newLine.setAttribute('y1',l2);
+                    newLine.setAttribute('x2',l3);
+                    newLine.setAttribute('y2',l1);
+                    newLine.setAttribute("stroke", "green")
+                    $("svg").append(newLine);
+                    //
+                    l2=l1;
+                    l1=0;
+                    l4=l3;
+                    l3=0;
+                }
+            });
+
+        }
+    })
+</script>
+</body>
+</html>

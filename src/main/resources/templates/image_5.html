@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>images 1</title>
+</head>
+<body>
+<nav>
+    <a href="/welcome">Svetikov</a>
+    <p th:text="${username}"></p>
+</nav>
+<div>
+    <img src="../images/39691473-way-wallpapers.jpg" height="1440" width="2560"/></div>
+<div>
+    <a th:href="${images}">img</a>
+    <img th:src="${images}" height="250" width="350">
+</div>
+</body>
+</html>
